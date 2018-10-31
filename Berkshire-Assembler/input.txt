@@ -1,0 +1,13 @@
+main:
+	
+	li   $t0, 5
+loop:	bne  $t0, $zero, end
+	
+	add  $s0, $t0, $t0
+	move $s1, $s0
+	sw   $s1, 0  ($sp)
+	lw   $s2, 0 ($sp)
+	j loop
+	slt $t0, $s1, $s2
+	la $t1, loop
+end:	.end
